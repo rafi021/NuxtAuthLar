@@ -10,7 +10,7 @@
             <em>User</em>
           </template>
           <b-dropdown-item to="/dashboard">Dashboard</b-dropdown-item>
-          <b-dropdown-item to="/logout">Log Out</b-dropdown-item>
+          <b-dropdown-item href="#" @click.prevent="logout()">Log Out</b-dropdown-item>
           <b-dropdown-item to="/login">login</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>
@@ -20,7 +20,11 @@
 
 <script>
 export default {
-
+  methods: {
+    logout () {
+      console.log('logout!!!')
+    }
+  }
 }
 </script>
 
