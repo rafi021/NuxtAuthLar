@@ -50,26 +50,26 @@ export default {
   },
   auth: {
     strategies: {
-      'laravelSanctum': {
-        provider: 'laravel/sanctum',
-        url: 'http://localhost:8000',
-        endpoints:{
-          login:{
-            url: 'api/login'
+      laravelSanctum: {
+        provider: "laravel/sanctum",
+        url: "http://api.test",
+        endpoints: {
+          login: {
+            url: "/api/login"
           },
-          register:{
-            url: 'api/register'
+          register: {
+            url: "/api/register"
           },
-          logout:{
-            url: 'api/logout'
+          logout: {
+            url: "/api/logout"
           },
-          user:{
-            url: 'api/user'
-          },
+          user: {
+            url: "/api/user"
+          }
+        },
+        user: {
+          property: false
         }
-      },
-      user: {
-        property: false,
       }
     },
     redirect: {
