@@ -37,7 +37,9 @@ export default {
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    // https://auth.nuxtjs.org/
+    '@nuxtjs/auth-next'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -45,5 +47,36 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+  auth: {
+    strategies: {
+      'laravelSanctum': {
+        provider: 'laravel/sanctum',
+        url: 'http://localhost:8000',
+        endpoints:{
+          login:{
+            url: 'api/login'
+          },
+          register:{
+            url: 'api/register'
+          },
+          logout:{
+            url: 'api/logout'
+          },
+          user:{
+            url: 'api/user'
+          },
+        }
+      },
+      user: {
+        property: false,
+      }
+    },
+    redirect: {
+      login: '/login',
+      logout: '/',
+      home: '/dashboard',
+    }
   }
+
 }
